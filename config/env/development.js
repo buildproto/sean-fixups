@@ -3,8 +3,8 @@
 module.exports = {
 	db: {
        dbName:'sean-dev',
-       username : 'SeanDB',
-       password : 'HU7XQQBNWq',
+       //username : 'SeanDB',
+       //password : 'HU7XQQBNWq',
        dialect: "postgres", // 'sqlite', 'postgres', 'mariadb','mysql'
        port : 5432 //    5432 for postgres, 3306 for mysql and mariaDB ,
     },
@@ -12,8 +12,8 @@ module.exports = {
 		title: 'SEAN - Development Environment'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+		clientID: process.env.FACEBOOK_ID || '845561502165650',
+		clientSecret: process.env.FACEBOOK_SECRET || '9da40562490a6031b13c5e16c706331f',
 		callbackURL: 'http://localhost:3000/auth/facebook/callback'
 	},
 	twitter: {

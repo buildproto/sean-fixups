@@ -18,6 +18,7 @@ module.exports = function() {
 			passReqToCallback: true
 		},
 		function(req, accessToken, refreshToken, profile, done) {
+			console.log('hihihihih', profile);
 			// Set the provider data and include tokens
 			var providerData = profile._json;
 			providerData.accessToken = accessToken;
@@ -28,13 +29,12 @@ module.exports = function() {
 				firstName: profile.name.givenName,
 				lastName: profile.name.familyName,
 				displayName: profile.displayName,
-				email: profile.emails[0].value,
+				email: profile.emails ? profile.emails[0].value : "",
 				username: profile.username,
 				provider: 'facebook',
 				providerIdentifierField: 'id',
 				providerData: providerData
 			};
-
 			// Save the user OAuth profile
 			users.saveOAuthUserProfile(req, providerUserProfile, done);
 		}

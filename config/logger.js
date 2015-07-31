@@ -55,7 +55,7 @@ module.exports = function(env){
     }
     ret.stream = {
         write: function(message, encoding){
-            logger.info(message);
+            //logger.info(message);
         }
     };
 

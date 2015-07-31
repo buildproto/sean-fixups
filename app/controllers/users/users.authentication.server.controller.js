@@ -127,11 +127,12 @@ exports.saveOAuthUserProfile = function(req, providerUserProfile, done) {
         additionalProviderSearchQuery[searchAdditionalProviderIdentifierField] = providerUserProfile.providerData[providerUserProfile.providerIdentifierField];
 
         // Define a search query to find existing user with current provider profile
+        
         var searchQuery = {
-            where: bd.or(mainProviderSearchQuery, additionalProviderSearchQuery)
+            or: [mainProviderSearchQuery, additionalProviderSearchQuery] // TODO: AJR Ensure this query is right
         };
 
-        User.find(searchQuery).done(function(err, user) {
+        db.User.find(searchQuery).done(function(err, user) {
             if (err) {
                 return done(err);
             } else {

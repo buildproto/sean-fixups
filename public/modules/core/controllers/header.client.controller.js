@@ -3,6 +3,7 @@
 angular.module('core').controller('HeaderController', ['$scope','$rootScope','$http', 'User', 'Menus','Authentication','Storage','Message','$location',
 	function($scope,$rootScope,$http, User, Menus,Authentication,Storage,Message,$location) {
 		$scope.user = User.get();
+        console.log("isAuthenticated", Authentication.isAuthenticated());
         $scope.isAuthenticated = Authentication.isAuthenticated();
         $rootScope.$on('Auth',function(){
             $scope.user = User.get();

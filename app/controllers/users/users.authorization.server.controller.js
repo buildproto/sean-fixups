@@ -26,6 +26,7 @@ exports.userByID = function(req, res, next, id) {
  */
 exports.isAuthenticated = function(req, res, next) {
     var token;
+    console.log("isAuthenticated");
 
     if (req.headers && req.headers.authorization) {
         var parts = req.headers.authorization.split(' ');
